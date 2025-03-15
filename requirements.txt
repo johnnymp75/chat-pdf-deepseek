@@ -2,3 +2,4 @@ flask
 numpy
 pandas
 PyPDF2
+transformers
