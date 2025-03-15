@@ -2,6 +2,16 @@ import streamlit as st
 from PyPDF2 import PdfReader
 from transformers import pipeline
 
+st.title("Chat-PDF con DeepSeek-R1")
+st.write("Bienvenido a la aplicación de chat con PDFs.")
+
+# Ejemplo de uso de transformers
+generator = pipeline("text-generation", model="gpt2")
+text = st.text_input("Escribe algo:")
+if text:
+    result = generator(text, max_length=50)
+    st.write(result)
+
 # Cargar el modelo GPT-2 (o GPT-Neo si prefieres)
 modelo = pipeline("text-generation", model="gpt2")  # Cambia a "EleutherAI/gpt-neo-125M" si prefieres GPT-Neo
 
